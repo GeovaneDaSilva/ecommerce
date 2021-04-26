@@ -1,3 +1,6 @@
+
+
+
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container"><!-- STRART CONTAINER -->
@@ -34,28 +37,12 @@
                             <span class="linearicons-zoom-in"></span>
                         </a>
                     </div>
-                    <div id="pr_item_gallery" class="product_gallery_item slick_slider" data-slides-to-show="4" data-slides-to-scroll="1" data-infinite="false">
-                        <div class="item">
-                            <a href="#" class="product_gallery_item active" data-image="assets/images/product_img1.jpg" data-zoom-image="assets/images/product_zoom_img1.jpg">
-                                <img src="assets/images/product_small_img1.jpg" alt="product_small_img1" />
-                            </a>
+                    <carousel>
+                        <div class="carousel-cell" *ngFor="let imagesProduct of imagesProducts.images">
+                            <img [src]="imagesProduct.src" alt="">
                         </div>
-                        <div class="item">
-                            <a href="#" class="product_gallery_item" data-image="assets/images/product_img1-2.jpg" data-zoom-image="assets/images/product_zoom_img2.jpg">
-                                <img src="assets/images/product_small_img2.jpg" alt="product_small_img2" />
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="product_gallery_item" data-image="assets/images/product_img1-3.jpg" data-zoom-image="assets/images/product_zoom_img3.jpg">
-                                <img src="assets/images/product_small_img3.jpg" alt="product_small_img3" />
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="product_gallery_item" data-image="assets/images/product_img1-4.jpg" data-zoom-image="assets/images/product_zoom_img4.jpg">
-                                <img src="assets/images/product_small_img4.jpg" alt="product_small_img4" />
-                            </a>
-                        </div>
-                    </div>
+                        
+                    </carousel>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">

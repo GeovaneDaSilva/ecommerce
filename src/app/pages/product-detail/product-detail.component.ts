@@ -4,11 +4,12 @@ import { Product } from 'src/app/model/product'
 import { Variant } from 'src/app/model/variant'
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { IVariant } from 'src/app/interface/product';
+import { IProduct, IVariant } from 'src/app/interface/product';
 @Component({
-  selector: 'app-product-detail',
+  selector: 'app-product-detail', 
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
+  
 })
 export class ProductDetailComponent implements OnInit {
   product = new Product()
@@ -23,12 +24,21 @@ export class ProductDetailComponent implements OnInit {
   selectVariant: any
   select: any
   // PRODUCTS
-
   products: {}
+  imagesProducts: IProduct
+
+
+  product_releted_ids: IVariant
+  variantOne: IVariant
+  variantSix: IVariant
+  variantFive: IVariant
+  variantFour: IVariant
   constructor(private productsService: ProductsService, private route:ActivatedRoute) {
 
     this.getProducts()
     this.getProductsRelations()
+    this.getProduct()
+      
    }
 
   
@@ -42,10 +52,9 @@ export class ProductDetailComponent implements OnInit {
 
     console.log('id product', this.id)
     console.log('id variant', this.variant_id)
-    this.productsService.listProducts().subscribe((response: any) => {
-      console.log(this.products);
-      
+    this.productsService.listProducts().subscribe((response: any) => {      
       this.product = response.find(fruit => fruit.id == this.id);
+      
 
       this.variant = this.product.variants.find(fruit => fruit.id == this.variant_id);
 
@@ -57,8 +66,7 @@ export class ProductDetailComponent implements OnInit {
       this.variant_id_selected = this.selectVariant.title
       this.select = this.selectVariant
       
-      
-      
+    
       });
   
   }
@@ -72,9 +80,31 @@ export class ProductDetailComponent implements OnInit {
   getProductsRelations() {
     this.productsService.listProducts().subscribe((response: any) => {
       this.products = response.slice(0, 6)
-      
 
+
+      let data = response.map(variant => variant.variants)
+
+      let dataVariants = data.map(variant => variant)
+
+      this.product_releted_ids = dataVariants
+
+      this.variantOne = this.variants[0]
+      this.variantFour  = this.variants[3]
+      this.variantFive = this.variants[4]
+      this.variantSix = this.variants[5]
     
     })
   }
+
+  getProduct(){
+    this.productsService.listProducts().subscribe( (response:any) => {
+      let findProduct = response.find(product => product.id == this.id);
+
+      this.imagesProducts = findProduct
+
+      this.imagesProducts
+      
+    })
+  }
+
 }

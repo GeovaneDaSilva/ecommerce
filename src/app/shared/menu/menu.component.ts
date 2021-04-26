@@ -36,7 +36,6 @@ export class MenuComponent implements OnInit {
     this.productService.listProducts().subscribe((response: IProduct) => {
       this.products = response
 
-      console.log(this.products);
       
 
       this.productOne = this.products[0].title
@@ -54,6 +53,8 @@ export class MenuComponent implements OnInit {
 
       let dataVariants = data.map(variant => variant)
       this.variants = dataVariants
+
+      
 
       this.variantOne = this.variants[0]
       this.variantFour  = this.variants[3]

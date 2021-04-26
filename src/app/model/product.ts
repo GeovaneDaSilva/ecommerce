@@ -20,6 +20,7 @@ export class Product {
   variants: any
   objective: string
   suggested_use: string
+  src: string
 
 
 }

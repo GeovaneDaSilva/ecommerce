@@ -16,6 +16,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
     HttpClientModule,
     FormsModule,
     NgOptionHighlightModule,
-    NgSelectModule
+    NgSelectModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
