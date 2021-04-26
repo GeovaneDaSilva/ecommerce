@@ -1,0 +1,19 @@
+<div class="product_search_form rounded_input">
+    <form>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="custom_select">
+                    <select class="first_null">
+                        <option *ngFor="let product of products">{{ product.title }}</option>
+
+                    </select>
+                </div>
+            </div>
+            <div>
+                <input class="form-control" placeholder="Search Product..." required=""  type="text">
+                <button type="submit" class="search_btn2"><i class="fa fa-search"></i></button>
+                
+            </div>
+        </div>
+    </form>
+</div>

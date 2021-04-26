@@ -1,14 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { APP_ROUTES } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { PageComponent } from './pages/page/page.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { TopHeaderComponent } from './shared/top-header/top-header.component';
+import { SearchComponent } from './shared/search/search.component';
+import { ShopComponent } from './shared/shop/shop.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    PageComponent,
+    SidebarComponent,
+    MenuComponent,
+    TopHeaderComponent,
+    SearchComponent,
+    ShopComponent,
+    ProductsComponent,
+    ProductDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTES,
+    HttpClientModule,
+    FormsModule,
+    NgOptionHighlightModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
