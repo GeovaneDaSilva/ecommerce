@@ -32,8 +32,8 @@
             <div class="col-lg-6 col-md-6 mb-4 mb-md-0" >
               <div class="product-image">
                     <div class="product_img_box">
-                        <img id="product.image" [src]='product.image' data-zoom-image="assets/images/product_zoom_img1.jpg" alt="product_img1" />
-                        <a href="#" class="product_img_zoom" title="Zoom">
+                        <img id="prod" [src]='product.image' data-zoom-image="assets/images/product_zoom_img1.jpg" alt="product_img1" />
+                        <a  routerLink="#prod" class="product_img_zoom" title="Zoom">
                             <span class="linearicons-zoom-in"></span>
                         </a>
                     </div>
@@ -70,7 +70,7 @@
                         
                         <div class="product_sort_info">
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Categoria</label>
+                                <label class="col-md-3 control-label"></label>
                                     <div class="col-md-9">
                                         <ng-select (ngModelChange)="getTitle($event)"  [ngModel]="variant_id_selected"  [items]="variantsList" binValue="id" binLabel="title"
                                         >
@@ -98,15 +98,24 @@
                     <div class="cart_extra">
                         <div class="cart-product-quantity">
                             <div class="quantity">
-                                <input type="button" value="-" class="minus">
-                                <input type="text" name="quantity" value="1" title="Qty" class="qty" size="4">
-                                <input type="button" value="+" class="plus">
+                                
+                                <div *ngIf="max !== 3">
+                                </div>
+                                <input type="button" value="-" class="minus" (click)="deCriment()">
+                                <input type="text" name="quantity" [value]="quantity" title="Qty" class="qty" size="4">
+                                <input type="button" value="+" class="plus" (click)="increMent()" [disabled]="quantity ==3">
                             </div>
                         </div>
+                        
                         <div class="cart_btn">
-                            <button class="btn btn-fill-out btn-addtocart" type="button"><i class="icon-basket-loaded"></i> Add to cart</button>
-                            <a class="add_compare" href="#"><i class="icon-shuffle"></i></a>
-                            <a class="add_wishlist" href="#"><i class="icon-heart"></i></a>
+                            <button class="btn btn-fill-out btn-addtocart" type="button" [disabled]="quantity ==3"><i class="icon-basket-loaded"></i> Add to cart</button>
+                            <a class="add_compare" ><i class="icon-shuffle"></i></a>
+                            <a class="add_wishlist"><i class="icon-heart"></i></a>
+                        </div>
+                        <div *ngIf="max == 4">
+                            <p class="text-danger">You will only be able to buy 3 products!!</p>
+
+                            <h3 class="text-success">Total: ${{quantity *  selectVariant.price}}</h3>
                         </div>
                     </div>
                     <hr />
@@ -119,11 +128,11 @@
                     <div class="product_share">
                         <span>Share:</span>
                         <ul class="social_icons">
-                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                            <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
-                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            <li><a href="https://www.facebook.com/groups/Redcon1customers/" target="_blank"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/groups/Redcon1customers/" target="_blank"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/groups/Redcon1customers/" target="_blank"><i class="ion-social-googleplus"></i></a></li>
+                            <li><a href="https://www.facebook.com/groups/Redcon1customers/" target="_blank"><i class="ion-social-youtube-outline"></i></a></li>
+                            <li><a href="https://www.facebook.com/groups/Redcon1customers/" target="_blank"><i class="ion-social-instagram-outline"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -172,7 +181,7 @@
                             	</tr>
                                 <tr>
                                     <td>SKU</td>
-                                    <td>v{{ variant.sku }}</td>
+                                    <td>v{{ select?select.sku:"" }}</td>
                                 </tr>
                                 <tr>
                                     <td>WEIGHT</td>
@@ -180,17 +189,17 @@
                                 </tr>
                                 <tr>
                                     <td>WEIGHT UNIT</td>
-                                    <td>{{ variant.weight_unit }}</td>
+                                    <td>{{ select?select.weight:"" }}</td>
                                 </tr>
                         	</table>
                       	</div>
                       	<div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
                         	<div class="comments">
-                            	<h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span></h5>
+                            	<h5 class="product_tab_title">2 Review For <span>{{select?select.title:""}}</span></h5>
                                 <ul class="list_none comment_list mt-4">
                                     <li>
                                         <div class="comment_img">
-                                            <img src="assets/images/user1.jpg" alt="user1"/>
+                                            <img src="../../../assets/images/redcon/logo-red.png" alt="user1"/>
                                         </div>
                                         <div class="comment_block">
                                             <div class="rating_wrap">
@@ -200,16 +209,16 @@
                                             </div>
                                             <p class="customer_meta">
                                                 <span class="review_author">Alea Brooks</span>
-                                                <span class="comment-date">March 5, 2018</span>
+                                                <span class="comment-date">April 26, 2021</span>
                                             </p>
                                             <div class="description">
-                                                <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate</p>
+                                                <p>Excellent product!!! I haven't bought it yet, but I recommend it :)</p>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="comment_img">
-                                            <img src="assets/images/user2.jpg" alt="user2"/>
+                                            <img src="../../../assets/images/redcon/logo-red.png" alt="user2"/>
                                         </div>
                                         <div class="comment_block">
                                             <div class="rating_wrap">
@@ -218,11 +227,11 @@
                                                 </div>
                                             </div>
                                             <p class="customer_meta">
-                                                <span class="review_author">Grace Wong</span>
-                                                <span class="comment-date">June 17, 2018</span>
+                                                <span class="review_author">Geovane</span>
+                                                <span class="comment-date">April 26, 2021</span>
                                             </p>
                                             <div class="description">
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+                                                <p>Excellent product!!! I haven't bought it yet, but I recommend it :)</p>
                                             </div>
                                         </div>
                                     </li>
@@ -282,20 +291,20 @@
                             </a>
                             <div class="product_action_box">
                                 <ul class="list_none pr_action_btn">
-                                    <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                    <li><a href="shop-compare.html"><i class="icon-shuffle"></i></a></li>
-                                    <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                    <li><a href="#"><i class="icon-heart"></i></a></li>
+                                    <li class="add-to-cart"><a ><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                    <li><a><i class="icon-shuffle"></i></a></li>
+                                    <li><a  class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                    <li><a ><i class="icon-heart"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="product_info">
                             <h6 class="product_title"><a [routerLink]="['/product/', product.id]">{{product.title}}</a></h6>
                             <div class="product_price">
-                                <span class="price">$45.00</span>
-                                <del>$55.25</del>
+                                <span class="price">$39.99</span>
+                                <del>$79.98</del>
                                 <div class="on_sale">
-                                    <span>35% Off</span>
+                                    <span>50% Off</span>
                                 </div>
                             </div>
                             <div class="rating_wrap">
@@ -372,82 +381,3 @@
 <!-- END MAIN CONTENT -->
 
 <!-- START FOOTER -->
-<footer class="footer_dark">
-	<div class="footer_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                	<div class="widget">
-                        <div class="footer_logo">
-                            <a href="#"><img src="assets/images/logo_light.png" alt="logo"/></a>
-                        </div>
-                        <p>If you are going to use of Lorem Ipsum need to be sure there isn't hidden of text</p>
-                    </div>
-                    <div class="widget">
-                        <ul class="social_icons social_white">
-                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                            <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
-                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                        </ul>
-                    </div>
-        		</div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                	<div class="widget">
-                        <h6 class="widget_title">Useful Links</h6>
-                        <ul class="widget_links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Location</a></li>
-                            <li><a href="#">Affiliates</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                	<div class="widget">
-                        <h6 class="widget_title">Category</h6>
-                        <ul class="widget_links">
-                            <li><a href="#">Men</a></li>
-                            <li><a href="#">Woman</a></li>
-                            <li><a href="#">Kids</a></li>
-                            <li><a href="#">Best Saller</a></li>
-                            <li><a href="#">New Arrivals</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                	<div class="widget">
-                        <h6 class="widget_title">My Account</h6>
-                        <ul class="widget_links">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Discount</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Orders History</a></li>
-                            <li><a href="#">Order Tracking</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                	<div class="widget">
-                        <h6 class="widget_title">Contact Info</h6>
-                        <ul class="contact_info contact_info_light">
-                            <li>
-                                <i class="ti-location-pin"></i>
-                                <p>123 Street, Old Trafford, New South London , UK</p>
-                            </li>
-                            <li>
-                                <i class="ti-email"></i>
-                                <a href="mailto:info@sitename.com">info@sitename.com</a>
-                            </li>
-                            <li>
-                                <i class="ti-mobile"></i>
-                                <p>+ 457 789 789 65</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>

@@ -30,11 +30,11 @@ const appRoutes: Routes = [
     //{ path: 'login', component: LoginComponent },
     //{ path: 'register', component: RegisterComponent },
 
-   // { path: '**', component: NopagefoundComponent }
+   { path: '**', component: HomeComponent }
 ];
 
 
-export const APP_ROUTES = RouterModule.forRoot( appRoutes, {initialNavigation: 'enabled',
+export const APP_ROUTES = RouterModule.forRoot( appRoutes, {initialNavigation: 'enabled', 
 useHash: true,
 anchorScrolling: 'enabled',
 scrollPositionRestoration: 'enabled',

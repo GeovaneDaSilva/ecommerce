@@ -1,7 +1,7 @@
 
 export interface IVariant {
   id: string
-  price: string
+  price: number
   sku: string
   title: string
   image: string

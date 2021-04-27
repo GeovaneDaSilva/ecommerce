@@ -1,6 +1,6 @@
 export class Variant {
   id: string
-  price: string
+  price: number
   sku: string
   title: string
   image: string

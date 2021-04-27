@@ -33,6 +33,9 @@ export class ProductDetailComponent implements OnInit {
   variantSix: IVariant
   variantFive: IVariant
   variantFour: IVariant
+
+
+
   constructor(private productsService: ProductsService, private route:ActivatedRoute) {
 
     this.getProducts()
@@ -62,7 +65,7 @@ export class ProductDetailComponent implements OnInit {
       this.variants = this.product.variants
 
       this.variantsList = this.variants
-      this.selectVariant = this.variantsList[0];
+      this.selectVariant = this.variantsList[0]
       this.variant_id_selected = this.selectVariant.title
       this.select = this.selectVariant
       
@@ -105,6 +108,43 @@ export class ProductDetailComponent implements OnInit {
       this.imagesProducts
       
     })
+
+  
   }
 
+  incre: number 
+  decre: number
+  quantity: number = 1
+  max: number
+  stop: boolean
+  i = 1
+  x = 1
+  z = 4
+  increMent() {
+    
+    if (this.i !=3) {
+      this.i++;
+      this.quantity = this.i
+      
+    }
+    
+    if (this.quantity === this.z++) {
+      this.stop = false
+      console.log(this.stop);
+      
+    }
+    this.max = this.x++
+    console.log(this.max);
+    this.max++
+    this.x++
+    
+  }
+
+  deCriment() {
+    if (this.i !=1) {
+      this.i--;
+      this.quantity = this.i
+      
+    }
+  }
 }
