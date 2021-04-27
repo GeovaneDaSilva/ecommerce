@@ -187,7 +187,6 @@ button:focus {
 }
 .btn-fill-out {
 	background-color: transparent;
-	border: 1px solid #FF324D;
 	color: #fff;
 	position: relative;
 	overflow: hidden;
@@ -200,7 +199,7 @@ button:focus {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background-color: #FF324D;
+	background-color: #20B814;
 	z-index: -1;
 	transition: all 0.3s ease-in-out;
 	width: 51%;
@@ -214,7 +213,7 @@ button:focus {
 	width: 0;
 }
 .btn-fill-out:hover {
-	color: #FF324D !important;
+	color: #50008E !important;
 }
 .btn-fill-line {
 	background-color: transparent;
@@ -2011,7 +2010,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 	overflow: hidden;
 }
 .el_banner1 {
-	background-color: #FDBB99;
+	background-color: #000000dc;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;

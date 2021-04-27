@@ -1,11 +1,11 @@
 <div class="categories_wrap">
-    <button type="button" data-toggle="collapse" data-target="#navCatContent" aria-expanded="false" class="categories_btn">
-        <i class="linearicons-menu"></i><span>All Categories </span>
+    <button type="button" data-toggle="collapse" data-target="#navCatContent" aria-expanded="false" class="button-category categories_btn" >
+        <i class="linearicons-menu"></i><span>Categories </span>
     </button>
-    <div id="navCatContent" class="nav_cat navbar collapse">
-        <ul> 
+    <div id="navCatContent" class="nav_cat navbar collapse moveToRight" >
+        <ul class="bg-sidbar"> 
             <li class="dropdown dropdown-mega-menu" >
-                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class="">{{ productOne.title }}</span></a>
+                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class="" [routerLink]="['/product/', productOne.id]">{{ productOne.title }}</span></a>
                 <div class="dropdown-menu">
                     <ul class="mega-menu d-lg-flex">
  
@@ -25,7 +25,7 @@
             </li>
 
             <li class="dropdown dropdown-mega-menu" >
-                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class="">{{ productFive.title }}</span></a>
+                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class="" [routerLink]="['/product/', productFive.id]">{{ productFive.title }}</span></a>
                 <div class="dropdown-menu">
                     <ul class="mega-menu d-lg-flex">
  
@@ -45,7 +45,7 @@
             </li>
 
             <li class="dropdown dropdown-mega-menu" >
-                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class="">{{ productSix.title }}</span></a>
+                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class=""  [routerLink]="['/product/', productSix.id]">{{ productSix.title }}</span></a>
                 <div class="dropdown-menu">
                     <ul class="mega-menu d-lg-flex">
  
@@ -65,7 +65,7 @@
             </li>
 
             <li class="dropdown dropdown-mega-menu" >
-                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class="">{{ productServen.title }}</span></a>
+                <a class="dropdown-item nav-link dropdown-toggler" href="#" data-toggle="dropdown"><span class="" [routerLink]="['/product/', productServen.id]">{{ productServen.title }}</span></a>
                 <div class="dropdown-menu">
                     <ul class="mega-menu d-lg-flex">
  
@@ -83,6 +83,42 @@
                     </ul>
                 </div>
             </li>
+
+
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/2152531198000/']" data-toggle="dropdown"><span class="">Foxtrot - Joint Support</span></a>
+                
+            </li>
+
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/4596933197872/']" data-toggle="dropdown"><span class="">Fish Oil (90 Servings)</span></a>
+                
+            </li>
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/4596921729072/']" data-toggle="dropdown"><span class="">CLA (90 Servings)</span></a>
+                
+            </li>
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/8108656519/']" data-toggle="dropdown"><span class="">Fade Out - Sleep Formula</span></a>
+                
+            </li>
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/8108580295/']" data-toggle="dropdown"><span class="">Double Tap - Fat Burner</span></a>
+                
+            </li>
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/8108163143/']" data-toggle="dropdown"><span class="">Breach - BCAAs</span></a>
+                
+            </li>
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/12188138570/']" data-toggle="dropdown"><span class="">BOOM STICK</span></a>
+                
+            </li>
+            <li class="dropdown dropdown-mega-menu">
+                <a class="dropdown-item nav-link " [routerLink]="['/product/12188138570/']" data-toggle="dropdown"><span class="">Big Noise</span></a>
+                
+            </li>
+
 
             
             

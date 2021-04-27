@@ -1,2 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+
+body {
+    background-color: #ffffffb9
+}
+.bottom_header  {
+    background-color: rgb(245, 245, 245) !important;
+    height: 50px !important;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.search_btn2 {
+    position: absolute;
+    right: 5px;
+    background-color: #50008E;
+    border: 0;
+    border-radius: 100%;
+    font-size: 14px;
+    top: 5px;
+    color: #fff;
+    z-index: 9;
+    width: 40px;
+    height: 40px;
+    z-index: 9;
+}
+
+.activeHeader {
+
+    color: #50008E !important;
+}
+
+.navbar-nav {
+    margin-top: -10px !important;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar-nav {
+        margin-top: -10px !important;
+    }
+  }
+
+
+.title-product {
+    color: #50008E;
+}
+.relation-title {
+    background-color:#702eab;
+    color:#ffffff;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+}
+
+.linearicons-shield-check, .linearicons-sync, .linearicons-bag-dollar {
+    color: #50008E !important;
+    font-weight: bold;
+}
+
+.btn-fill-out:hover {
+    background-color: #50008E !important;
+    color: ghostwhite !important;
+}
+
+.minus, .plus {
+    background-color: #50008E !important;
+    color: ghostwhite !important;
+}
+
+.ion-social-facebook, .ion-social-twitter, .ion-social-googleplus, .ion-social-youtube-outline, .ion-social-instagram-outline {
+    color: #50008E !important;
+}
+
+
+.tab-style3 .nav-tabs .nav-item a.active {
+    border-bottom-color: #000000;
+    color: #000000;
+}
+
+.mega-menu-col {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}

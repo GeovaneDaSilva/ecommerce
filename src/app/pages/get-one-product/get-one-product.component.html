@@ -48,10 +48,10 @@
             <div class="col-lg-6 col-md-6">
                 <div class="pr_detail">
                     <div class="product_description">
-                        <h4 class="product_title"><a >{{product.title}}</a></h4>
-                        <p class="text-success product_title"><a >{{ select.title }}</a></p>
+                        <h4 class="title-product product_title"><a >{{product.title}}</a></h4>
+                        <p class=" product_title"><a class="relation-title">{{ select.title }}</a></p>
                         <div class="product_price">
-                            <span class="price">{{ select.price }}</span>
+                            <span class="price">${{ select.price }}</span>
                             <del>$55.25</del>
                             <div class="on_sale">
                                 <span>35% Off</span>
@@ -298,8 +298,8 @@
                         </div>
                         <div class="product_info">
                             <h6 class="product_title"><a><p (click)="navegation(product.id)">{{product.title}}</p></a></h6>
-                            <div class="product_price">
-                                <span class="price">$39.99</span>
+                            <div class="product_price ">
+                                <span class="price title-product ">$39.99</span>
                                 <del>$79.98</del>
                                 <div class="on_sale">
                                     <span>50% Off</span>

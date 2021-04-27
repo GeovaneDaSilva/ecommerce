@@ -12,12 +12,15 @@ export class SidebarComponent implements OnInit {
   products: IProduct
   product = new Product()
 
+  productsList: IProduct
 
   productOne: IProduct
   productSix: IProduct
   productFive: IProduct
   productFour: IProduct
   productServen: IProduct
+
+
   
   imagesProducts: IProduct
   imagesProductsFour: IProduct
@@ -30,6 +33,9 @@ export class SidebarComponent implements OnInit {
     
     this.productService.listProducts().subscribe((response: any) => {
       this.products = response
+      this.productsList = response.slice(7, 15)
+
+      
 
       this.productOne = this.products[0]
       this.productFour = this.products[3]
@@ -48,7 +54,7 @@ export class SidebarComponent implements OnInit {
 
       let productServen = response.find(product => product.id == this.products[7].id);
 
-      
+
 
       this.imagesProducts = productOne
 
@@ -64,7 +70,6 @@ export class SidebarComponent implements OnInit {
       this.imagesProductsServen = productServen
 
 
-      console.log('soy server', this.imagesProductsServen);
 
 
       
@@ -80,5 +85,8 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+
 
 }

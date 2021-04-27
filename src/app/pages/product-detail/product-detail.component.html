@@ -48,10 +48,12 @@
             <div class="col-lg-6 col-md-6">
                 <div class="pr_detail">
                     <div class="product_description">
-                        <h4 class="product_title"><a href="#">{{product.title}}</a></h4>
-                        <p class="product_title"><a href="#">{{select?select.title:"0"}}</a></p>
+                        <h4 class="product_title"><a  class="title-product">{{product.title}}</a></h4>
+                        <hr>
+                        <p class="product_title"><a  class="relation-title">{{select?select.title:"0"}}</a></p>
+                        <hr>
                         <div class="product_price">
-                            <span class="price">{{ select?select.price:"0" }}</span>
+                            <span class="title-product price">$ {{ select?select.price:"0" }}</span>
                             <del>$55.25</del>
                             <div class="on_sale">
                                 <span>35% Off</span>
@@ -87,7 +89,7 @@
 
                                 
 
-                                <li><i class="linearicons-shield-check"></i> {{select?select.title:""}}</li>
+                                <li><i class="linearicons-shield-check "></i> {{select?select.title:""}}</li>
                                 <li><i class="linearicons-sync"></i> 30 Day Return Policy</li>
                                 <li><i class="linearicons-bag-dollar"></i> Cash on Delivery available</li>
                             </ul>
@@ -113,9 +115,9 @@
                             <a class="add_wishlist"><i class="icon-heart"></i></a>
                         </div>
                         <div *ngIf="max == 4">
-                            <p class="text-danger">You will only be able to buy 3 products!!</p>
+                            <p class="text-warning">You will only be able to buy 3 products!!</p>
 
-                            <h3 class="text-success">Total: ${{quantity *  selectVariant.price}}</h3>
+                            <h3 class="title-product">Total: ${{quantity *  selectVariant.price}}</h3>
                         </div>
                     </div>
                     <hr />
@@ -291,7 +293,7 @@
                             </a>
                             <div class="product_action_box">
                                 <ul class="list_none pr_action_btn">
-                                    <li class="add-to-cart"><a ><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                    <li class="add-to-cart"><a class="back-button" ><i class="icon-basket-loaded"></i> Add To Cart</a></li>
                                     <li><a><i class="icon-shuffle"></i></a></li>
                                     <li><a  class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
                                     <li><a ><i class="icon-heart"></i></a></li>
@@ -299,9 +301,9 @@
                             </div>
                         </div>
                         <div class="product_info">
-                            <h6 class="product_title"><a [routerLink]="['/product/', product.id]">{{product.title}}</a></h6>
+                            <h6 class="product_title"><a class="dart" [routerLink]="['/product/', product.id]">{{product.title}}</a></h6>
                             <div class="product_price">
-                                <span class="price">$39.99</span>
+                                <span class="title-product price">$39.99</span>
                                 <del>$79.98</del>
                                 <div class="on_sale">
                                     <span>50% Off</span>

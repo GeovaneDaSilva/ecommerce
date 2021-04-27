@@ -24,6 +24,7 @@ export interface IProduct {
   find: any
   subject: string
   suggested_use : string
+  slice: any
 
 
 }

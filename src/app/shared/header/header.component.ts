@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from 'src/app/interface/product';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  products: IProduct
+  constructor(private productsService: ProductsService) { 
+    this.productsService.listProducts().subscribe((response:IProduct) =>{
+      this.products = response.slice(4,6)
+      
+    })
+  }
 
   ngOnInit(): void {
+
   }
 
 }
