@@ -20,9 +20,9 @@
                         <ul class="mega-menu d-lg-flex">
                             <li class="mega-menu-col col-lg-3">
                                 <ul> 
-                                    <li class="dropdown-header">{{ productOne }}</li>
+                                    <li class="dropdown-header ">{{ productOne }}</li>
                                     <li *ngFor="let variant of variantOne">
-                                        <a class="dropdown-item nav-link nav_item"  [routerLink]="['/product/', productOne_id, variant.id]">{{ variant.title }}</a>
+                                        <a class="dropdown-item nav-link nav_item" (click)="reload(productOne_id, variant.id)" [routerLink]="['/product/', productOne_id, variant.id]">{{ variant.title }}</a>
                                     </li>
     
                                 </ul>
@@ -31,7 +31,7 @@
                                 <ul>
                                     <li class="dropdown-header">{{ productFour | slice:0:13 }}</li>
                                     <li *ngFor="let variant of variantFour">
-                                        <a class="dropdown-item nav-link nav_item" [routerLink]="['/product/', productFour_id, variant.id]">{{ variant.title }}</a>
+                                        <a class="dropdown-item nav-link nav_item" (click)="reload(productFour_id, variant.id)" [routerLink]="['/product/', productFour_id, variant.id]">{{ variant.title }}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -39,7 +39,7 @@
                                 <ul>
                                     <li class="dropdown-header">{{ productFive | slice:0:13 }}</li>
                                     <li *ngFor="let variant of variantFive">
-                                        <a class="dropdown-item nav-link nav_item" [routerLink]="['/product/', productFive_id, variant.id]">{{ variant.title }}</a>
+                                        <a class="dropdown-item nav-link nav_item" (click)="reload(productFive_id, variant.id)" [routerLink]="['/product/', productFive_id, variant.id]">{{ variant.title }}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -47,7 +47,7 @@
                                 <ul>
                                     <li class="dropdown-header">{{ productSix | slice:0:10 }}</li>
                                     <li *ngFor="let variant of variantSix">
-                                        <a class="dropdown-item nav-link nav_item" [routerLink]="['/product/', productSix_id, variant.id]">{{ variant.title }}</a>
+                                        <a class="dropdown-item nav-link nav_item" (click)="reload(productSix_id, variant.id)" [routerLink]="['/product/', productSix_id, variant.id]">{{ variant.title }}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -57,8 +57,8 @@
                             <div class="col-lg-6">
                                 <div class="header-banner">
                                     <div class="sale-banner">
-                                        <a class="hover_effect1" href="#">
-                                            <img src="assets/images/shop_banner_img7.jpg" alt="shop_banner_img7">
+                                        <a class="hover_effect1" routerLink="product/4664672616496/32394390831152">
+                                            <img src="../../../assets/images/redcon/slide.jpg" alt="shop_banner_img7">
                                         </a>
                                     </div>
                                 </div>
@@ -66,8 +66,8 @@
                             <div class="col-lg-6">
                                 <div class="header-banner">
                                     <div class="sale-banner">
-                                        <a class="hover_effect1" href="#">
-                                            <img src="assets/images/shop_banner_img8.jpg" alt="shop_banner_img8">
+                                        <a class="hover_effect1" routerLink="product/2176823427120">
+                                            <img src="../../../assets/images/redcon/banner2.jpg" alt="shop_banner_img8">
                                         </a>
                                     </div>
                                 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { IProduct, IVariant } from 'src/app/interface/product'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -24,7 +25,7 @@ export class MenuComponent implements OnInit {
   productFive_id: IProduct
   productFour: IProduct
   productFour_id: IProduct
-  constructor(private productService: ProductsService) {
+  constructor(private productService: ProductsService, private router: Router) {
     this.getVariants()
   }
 
@@ -61,5 +62,17 @@ export class MenuComponent implements OnInit {
       this.variantFive = this.variants[4]
       this.variantSix = this.variants[5]
     })
+  }
+
+
+  async reload(idProduct, id) {
+
+    console.log('aqui esta el id',idProduct, id);
+    
+    let path = this.router.navigate([`/product/${idProduct}/${id}`])
+
+    location.reload(await path)
+    
+
   }
 }

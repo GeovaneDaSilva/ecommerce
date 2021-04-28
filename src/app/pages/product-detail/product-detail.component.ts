@@ -147,4 +147,12 @@ export class ProductDetailComponent implements OnInit {
       
     }
   }
+
+  loadinImage: boolean = false
+  imageChange: string
+  selectImage(event) {
+    console.log('selected', event.path[0].currentSrc);
+    this.imageChange = event.path[0].currentSrc
+    this.loadinImage = true
+  }
 }

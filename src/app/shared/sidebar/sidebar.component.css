@@ -3,10 +3,10 @@
     border: 1px solid #000000;
     color: #fff;
     text-align: left;
-    width: 60%;
-    margin-left: 156px !important ;
-    margin-top: 18px;
-    
+    width: 100%;
+    margin-top: 17px;
+
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -35,23 +35,6 @@ button  {
     height: 50px !important;
 }
 
-.moveToRight  {
-    margin-left: 156px !important;
-    width: 500px imp !important;
-}
-
-@media only screen and (max-width: 600px) {
-    .moveToRight  {
-        margin-left: 0px !important;
-    }
-  }
-
-  @media only screen and (max-width: 800px) {
-    #navCatContent {
-        background-color: #fff;
- 
-    }
-  }
 
 
   .bg-sidbar {
@@ -63,12 +46,19 @@ button  {
     text-transform: capitalize;
     font-size: 14px;
     color: floralwhite;
-    width: 60% !important;
-    padding-bottom: 11px !important;
+    width: 100% !important;
+    padding-bottom: 10px !important;
+    border:0.04em solid black;
+
     
 }
 
 #navCatContent {
-   width: 60%;
+   width: 100%;
 
 }
+
+.more_categories {
+    color: #50008e;
+}
+

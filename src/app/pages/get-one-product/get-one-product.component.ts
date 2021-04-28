@@ -99,5 +99,13 @@ export class GetOneProductComponent implements OnInit {
     setTimeout(function(){ location.reload() }, 1);
     
   }
+  loadinImage: boolean = false
+  imageChange: string
+  selectImage(event) {
+    console.log('selected', event.path[0].currentSrc);
+    this.imageChange = event.path[0].currentSrc
+    this.loadinImage = true
+  }
+
 
 }

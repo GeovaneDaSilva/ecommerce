@@ -32,14 +32,24 @@
             <div class="col-lg-6 col-md-6 mb-4 mb-md-0" >
               <div class="product-image">
                     <div class="product_img_box">
-                        <img [src]="product.image" id="prod"  data-zoom-image="assets/images/product_zoom_img1.jpg" alt="product_img1" />
+                        <div *ngIf="loadinImage ==false">
+                            <img [src]="product.image" id="prod"  data-zoom-image="assets/images/product_zoom_img1.jpg" alt="product_img1" />
+
+                        </div>
+
+                        <div *ngIf="loadinImage ==true">
+                            <img [src]="imageChange" id="prod"  data-zoom-image="assets/images/product_zoom_img1.jpg" alt="product_img1" />
+
+                        </div>
+
                         <a   class="product_img_zoom" title="Zoom">
                             <span class="linearicons-zoom-in"></span>
                         </a>
                     </div>
                     <carousel>
+                        
                         <div class="carousel-cell" *ngFor="let image of images.images">
-                            <img [src]="image.src" alt="">
+                            <img [src]="image.src" alt=""  (click)="selectImage($event)">
                         </div>
                         
                     </carousel>
@@ -111,9 +121,9 @@
                             <a class="add_wishlist"><i class="icon-heart"></i></a>
                         </div>
                         <div *ngIf="max == 4">
-                            <p class="text-warning">You will only be able to buy 3 products!!</p>
+                            <p class="text-dark">You will only be able to buy 3 products!!</p>
 
-                            <h3 class="text-success">Total: {{quantity *  selectVariant.price}}</h3>
+                            <h3 class="title-product">Total: ${{quantity *  selectVariant.price}}</h3>
                         </div>
                     </div>
                     <hr />

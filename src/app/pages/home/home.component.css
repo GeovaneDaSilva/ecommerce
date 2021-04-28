@@ -1,6 +1,5 @@
 .sidbarMenu {
     margin-top: -68px;
-    position: absolute
 }
 
 .img-home-card {
@@ -11,3 +10,25 @@
     color: aliceblue;
 }
 
+
+
+
+/*SLIDES TRANSATIONS */
+
+
+
+.bg_slid_1 {
+
+	background-image: url("../../../assets/images/redcon/banner2.jpg");
+	margin-top: 0px;
+    margin-bottom: 200px;
+    background-repeat: repeat-y;
+}
+
+.bg_slid_2 {
+
+	background-image: url("../../../assets/images/redcon/slide.jpg");
+	margin-top: 0px;
+    margin-bottom: 200px;
+    background-repeat: repeat-y;
+}
