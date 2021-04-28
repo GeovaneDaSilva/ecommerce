@@ -9,6 +9,8 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ShopComponent implements OnInit {
 
   products: IProduct
+  news: IProduct
+  offers: IProduct
   constructor(private productService: ProductsService) {
     
     this.getProducts()
@@ -19,7 +21,9 @@ export class ShopComponent implements OnInit {
 
   getProducts() {
     this.productService.listProducts().subscribe((response: IProduct) => {
-      this.products = response.slice(0, 3)
+      this.products = response.slice(0, 8)
+      this.news = response.slice(8, 12)
+      this.offers = response.slice(14, 18)
       
     })
   }

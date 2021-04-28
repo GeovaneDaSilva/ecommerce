@@ -27,9 +27,6 @@
                                         <a class="nav-link" id="sellers-tab" data-toggle="tab" href="#sellers" role="tab" aria-controls="sellers" aria-selected="false">Best Sellers</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="false">Featured</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a class="nav-link" id="special-tab" data-toggle="tab" href="#special" role="tab" aria-controls="special" aria-selected="false">Special Offer
                                         </a>
                                     </li>
@@ -42,13 +39,13 @@
                     <div class="col-12">
                         <div class="tab_slider" >
                             <div class="tab-pane fade show active" id="arrival" role="tabpanel" aria-labelledby="arrival-tab">
-                                <div class="card-columns col-md-12"> 
-                                    <div class="" *ngFor="let product of products" >
+                                <div class="row itemsBlock col-md-12"> 
+                                    <div  *ngFor="let product of products" class="col-md-3 col-sm-6 col-12" >
                                         
                                         <div class="item">
                                             <div class="product">
                                                 <div class="product_img">
-                                                    <span class="pr_flash bg-danger">Hot</span>
+                                                    <span class="pr_flash">New</span>
 
                                                     <a>
                                                         <img [src]="product.image" loading="auto" alt="product_img1" [routerLink]="['/product/', product.id]">
@@ -94,30 +91,111 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="sellers" role="tabpanel" aria-labelledby="sellers-tab">
-                                <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1" data-loop="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+                                <div class="row">
+                                    <div  *ngFor="let new of news" class="col-md-3 col-sm-6 col-12" >
+                                        
+                                        <div class="item">
+                                            <div class="product_wrap">
+                                                <div class="product_img">
+                                                    <span class="pr_flash bg-danger">Hot</span>
+
+                                                    <a>
+                                                        <img [src]="new.image" loading="auto" alt="product_img1" [routerLink]="['/product/', new.id]">
+                                                    </a>
+                                                    <div class="product_action_box">
+                                                        <ul class="list_none pr_action_btn">
+                                                            <li class="add-to-cart"><a class="back-button" ><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                            <li><a><i class="icon-shuffle"></i></a></li>
+                                                            <li><a  class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                            <li><a ><i class="icon-heart"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product_info">
+                                                    <h6 class="product_title"><a class="dart" [routerLink]="['/product/', new.id]">{{new.title}}</a></h6>
+                                                    <div class="product_price">
+                                                        <span class="title-product price">$39.99</span>
+                                                        <del>$79.98</del>
+                                                        <div class="on_sale">
+                                                            <span>50% Off</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rating_wrap">
+                                                        <div class="rating">
+                                                            <div class="product_rate" style="width:80%"></div>
+                                                        </div>
+                                                        <span class="rating_num">(21)</span>
+                                                    </div>
+                                                    <div class="pr_desc">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+                                                    </div>
+                                                    <div class="pr_switch_wrap">
+                                                        <div class="product_color_switch">
+                                                            <span class="active" data-color="#87554B"></span>
+                                                            <span data-color="#333333"></span>
+                                                            <span data-color="#DA323F"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab">
-                                <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1" data-loop="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
-                                    
-                                    
-                                    
-                                   
-                                    
-                                    
-                                </div>
-                            </div>
+                            
                             <div class="tab-pane fade" id="special" role="tabpanel" aria-labelledby="special-tab">
-                                <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1" data-loop="true" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
-                                    
-                                    
+                                
+                                <div class="row">
+                                    <div  *ngFor="let offer of offers" class="col-md-3 col-sm-6 col-12" >
+                                        
+                                        <div class="item">
+                                            <div class="product_wrap">
+                                                <div class="product_img">
+                                                    <span class="pr_flash bg-success">Offer</span>
+
+                                                    <a>
+                                                        <img [src]="offer.image" loading="auto" alt="product_img1" [routerLink]="['/product/', offer.id]">
+                                                    </a>
+                                                    <div class="product_action_box">
+                                                        <ul class="list_none pr_action_btn">
+                                                            <li class="add-to-cart"><a class="back-button" ><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                            <li><a><i class="icon-shuffle"></i></a></li>
+                                                            <li><a  class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
+                                                            <li><a ><i class="icon-heart"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product_info">
+                                                    <h6 class="product_title"><a class="dart" [routerLink]="['/product/', offer.id]">{{offer.title}}</a></h6>
+                                                    <div class="product_price">
+                                                        <span class="title-product price">$39.99</span>
+                                                        <del>$79.98</del>
+                                                        <div class="on_sale">
+                                                            <span>50% Off</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rating_wrap">
+                                                        <div class="rating">
+                                                            <div class="product_rate" style="width:80%"></div>
+                                                        </div>
+                                                        <span class="rating_num">(21)</span>
+                                                    </div>
+                                                    <div class="pr_desc">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+                                                    </div>
+                                                    <div class="pr_switch_wrap">
+                                                        <div class="product_color_switch">
+                                                            <span class="active" data-color="#87554B"></span>
+                                                            <span data-color="#333333"></span>
+                                                            <span data-color="#DA323F"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
