@@ -18,6 +18,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { GetOneProductComponent } from './pages/get-one-product/get-one-product.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { GetOneProductComponent } from './pages/get-one-product/get-one-product.
     ShopComponent,
     ProductsComponent,
     ProductDetailComponent,
-    GetOneProductComponent
+    GetOneProductComponent,
+    FooterComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

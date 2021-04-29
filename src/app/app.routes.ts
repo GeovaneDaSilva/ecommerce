@@ -3,6 +3,7 @@ import { HomeComponent } from 'src/app/pages/home/home.component';
 import { PageComponent } from 'src/app/pages/page/page.component';
 import { GetOneProductComponent } from './pages/get-one-product/get-one-product.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
             { path: 'product/:product_id/:variant_id', component: ProductDetailComponent},
             { path: 'product/:id', component: GetOneProductComponent},
             
+            { path: 'product-list', component: ProductListComponent},
 
 
 
